@@ -1,0 +1,8 @@
+function calculate() {
+  fetch('items.json')
+    .then(res => res.json())
+    .then(data => (document.body.innerHTML = data[0].text))
+    .catch(err => console.log(err));
+}
+
+calculate();
