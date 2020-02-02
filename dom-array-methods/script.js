@@ -24,6 +24,11 @@ async function getRandomUser() {
   addData(newUser);
 }
 
+function showMillionaires() {
+  data = data.filter(user => user.money >= 1000000);
+  updateDOM();
+}
+
 function doubleMoney() {
   data = data.map(user => {
     return { ...user, money: user.money * 2 };
@@ -61,3 +66,4 @@ function formatMoney(number) {
 addUserBtn.addEventListener('click', getRandomUser);
 doubleBtn.addEventListener('click', doubleMoney);
 sortBtn.addEventListener('click', sortByRichest);
+showMillionairesBtn.addEventListener('click', showMillionaires);
